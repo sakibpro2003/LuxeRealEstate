@@ -3,6 +3,7 @@ import Navbar from "../Shared/Navbar";
 import { AuthContext } from "../Firebase/AuthProvider";
 
 const Login = () => {
+    
 
     const {loginUser}=useContext(AuthContext);
     const handleLogin =(e)=>{
@@ -11,6 +12,7 @@ const Login = () => {
         const password = e.target.password.value;
         loginUser(email,password)
         .then(res => {
+            
             console.log(res.user)
         })
         .catch(error =>{

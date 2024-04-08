@@ -11,15 +11,20 @@ const AuthProvider = ({children}) => {
     const [loading,setLoading] = useState(true);
 
   const createUser = (email,password)=>{
+    setLoading(true);
    return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const loginUser=(email,password)=>{
+    setLoading(true);
+
         return signInWithEmailAndPassword(auth, email, password)
     }
 
 
     const logOut= () =>{
+    setLoading(true);
+
         signOut(auth).then(() => {
             // setUser(null)
           }).catch((error) => {
@@ -30,8 +35,11 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, (currenUser) =>{
+    // setLoading(true);
+
             console.log("before set",currenUser);
             setUser(currenUser);
+            setLoading(false);
             console.log("afterset",currenUser);
 
         // setLoading(false);
@@ -48,6 +56,7 @@ const AuthProvider = ({children}) => {
         user,
         loginUser,
         logOut,
+        loading,
         // setUser,
     }
     return (
