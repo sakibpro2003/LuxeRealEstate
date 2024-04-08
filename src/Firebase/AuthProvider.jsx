@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {onAuthStateChanged , getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut } from "firebase/auth";
+import {onAuthStateChanged , getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import app from './firebase.init';
 export const AuthContext = createContext(null);
 
@@ -9,6 +9,10 @@ const auth  = getAuth(app);
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState([]);
     const [loading,setLoading] = useState(true);
+    const provider = new GoogleAuthProvider();
+    const [name,setName] = useState("");
+
+
 
   const createUser = (email,password)=>{
     setLoading(true);
@@ -19,6 +23,10 @@ const AuthProvider = ({children}) => {
     setLoading(true);
 
         return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    const googleLogin=()=>{
+       return signInWithPopup(auth, provider)
     }
 
 
@@ -34,16 +42,12 @@ const AuthProvider = ({children}) => {
 
 
     useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth, (currenUser) =>{
-    // setLoading(true);
-
-            console.log("before set",currenUser);
-            setUser(currenUser);
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) =>{
+            setUser(currentUser);
+            const profilename=(currentUser.displayName)
+            setName(profilename);
+            console.log("profile",profilename)
             setLoading(false);
-            console.log("afterset",currenUser);
-
-        // setLoading(false);
-
         });
         return ()=>{
             unsubscribe();
@@ -57,6 +61,8 @@ const AuthProvider = ({children}) => {
         loginUser,
         logOut,
         loading,
+        googleLogin,
+        name,
         // setUser,
     }
     return (
