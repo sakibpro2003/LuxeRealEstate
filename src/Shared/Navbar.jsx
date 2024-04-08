@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Firebase/AuthProvider";
 
 const Navbar = () => {
-  const { user, logOut, name } = useContext(AuthContext);
+  const { user, logOut, name,photo } = useContext(AuthContext);
   const handleLogout = () => {
     logOut();
   };
@@ -46,7 +46,7 @@ const Navbar = () => {
         <li><NavLink to="/pages_to_read">Pages to Read</NavLink></li> */}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">sakjlf</a>
+        <a className="btn btn-ghost text-xl">LuxeRealEstate</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -64,6 +64,15 @@ const Navbar = () => {
               <NavLink to="/login">Login</NavLink>
             </li>
           )}
+          {user ? (
+            <li>
+            <NavLink to="/update">Update Profile</NavLink>
+          </li>
+          ) : (
+            
+            <p className="text-transparent">h</p>
+          )}
+          
         </ul>
       </div>
 
@@ -71,10 +80,10 @@ const Navbar = () => {
         <div className="navbar-end">
           <div
             className="avatar hover:tooltip tooltip-open tooltip-left"
-            data-tip="warning"
+            data-tip={name}
           >
             <div className="w-12 rounded-full">
-              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src={photo} />
             </div>
           </div>
           <NavLink onClick={handleLogout} className="btn">
