@@ -1,6 +1,22 @@
+import { useContext } from "react";
 import Navbar from "../Shared/Navbar";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 const Login = () => {
+
+    const {loginUser}=useContext(AuthContext);
+    const handleLogin =(e)=>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        loginUser(email,password)
+        .then(res => {
+            console.log(res.user)
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
     return (
         <div>
             <Navbar></Navbar>
@@ -30,7 +46,7 @@ const Login = () => {
             </div>
 
             <div className="mt-8">
-              <form>
+              <form onSubmit={handleLogin}>
                 <div>
                   <label htmlFor="email" className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email Address</label>
                   <input type="email" name="email" id="email" placeholder="example@example.com" className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
@@ -46,12 +62,12 @@ const Login = () => {
                 </div>
 
                 <div className="mt-6">
-                  <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                  <button type="submit" className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                     Sign in
                   </button>
                 </div>
 
-              </form>
+              </form >
 
               <p className="mt-6 text-sm text-center text-gray-400">Dont have an account yet? <a href="/register" className="text-blue-500 focus:outline-none focus:underline hover:underline">Sign up</a>.</p>
             </div>

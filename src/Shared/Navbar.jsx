@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut();
+  };
   return (
     <div className="navbar bg-base-100 mt-5">
       <div className="navbar-start">
@@ -47,27 +53,39 @@ const Navbar = () => {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          <li>
-            <NavLink to="/login">Login</NavLink>
-          </li>
 
           <li>
             <NavLink to="/register">Register</NavLink>
           </li>
+          {user ? (
+            <p className="text-transparent">h</p>
+          ) : (
+            <li>
+              <NavLink to="/login">Login</NavLink>
+            </li>
+          )}
         </ul>
       </div>
 
-      <div className="navbar-end">
-        <div
-          className="avatar hover:tooltip tooltip-open tooltip-left"
-          data-tip="warning"
-        >
-          <div className="w-12 rounded-full">
-            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+      {user ? (
+        <div className="navbar-end">
+          <div
+            className="avatar hover:tooltip tooltip-open tooltip-left"
+            data-tip="warning"
+          >
+            <div className="w-12 rounded-full">
+              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            </div>
           </div>
+          <NavLink onClick={handleLogout} className="btn">
+            Logout
+          </NavLink>
         </div>
-        <a className="btn">Logout</a>
-      </div>
+      ) : (
+        <li>
+          {/* <NavLink to="/login">Login</NavLink> */}
+        </li>
+      )}
     </div>
   );
 };
