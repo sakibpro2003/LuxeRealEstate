@@ -26,13 +26,14 @@ const router = createBrowserRouter([
             element: <Register></Register>
         },
         {
-            path:"/estate-details",
-            element:<PrivateRoute><EstateDetails/></PrivateRoute>
+            path:"/details/:id",
+            element:<EstateDetails/>
         },
         {
             path:"/update",
             element:<UpdateProfile></UpdateProfile>
         },
+        
     ]
   },
 ]);
