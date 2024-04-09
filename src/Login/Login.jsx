@@ -1,12 +1,9 @@
 import { useContext, useState } from "react";
 import Navbar from "../Shared/Navbar";
 import { AuthContext } from "../Firebase/AuthProvider";
-import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-  // const [name, setName] = useState("");
   const { loginUser, googleLogin } = useContext(AuthContext);
-  const [userLogged, setUserLogged] = useState(null);
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -14,11 +11,10 @@ const Login = () => {
     loginUser(email, password)
       .then((res) => {
         // setUserLogged(res.user);
-
         // console.log(res.user);
       })
       .catch((error) => {
-        console.log(error);
+        alert(error.message)
       });
   };
   const handleGoogleLogin = async () => {
@@ -40,6 +36,7 @@ const Login = () => {
           >
             <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
               <div>
+                {/* <button onClick={notify} className="btn">toast </button> */}
                 <h2 className="text-2xl font-bold text-white sm:text-3xl">
                   Meraki UI
                 </h2>

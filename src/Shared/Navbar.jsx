@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Firebase/AuthProvider";
 
 const Navbar = () => {
-  const { user, logOut, name,photo } = useContext(AuthContext);
+  const { user, logOut, name,photo} = useContext(AuthContext);
   const handleLogout = () => {
     logOut();
   };

@@ -1,24 +1,34 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Navbar from "../Shared/Navbar";
 import { AuthContext } from "../Firebase/AuthProvider";
 const Register = () => {
+  const [errorMessage, setErrorMessage] = useState("");
+  // const [emailError,setEmailError] = useState("");
   const { createUser } = useContext(AuthContext);
   const pic = "https://i.ibb.co/C2nhDnK/man-7796384-640.jpg";
   const handleRegister = (e) => {
     e.preventDefault();
+    const password = e.target.password.value;
+    const confirm_password = e.target.confirm_password.value;
     const email = e.target.email.value;
     const name = e.target.name.value;
     // const photo = e.target.photo.value;
     const photo = pic;
-    const password = e.target.password.value;
-    const confirm_password = e.target.email.value;
+    
     console.log(email, name, photo, password, confirm_password);
+    if (password.length < 6) {
+      setErrorMessage("Password must be at least 6 characters");
+      alert(errorMessage);
+      return ;
+    }
+    else if (password !== confirm_password) {
+      setErrorMessage("password didnt match");
+      alert(errorMessage);
+      return ;
+    }
 
-   
     createUser(email, password)
-      .then((res) => {
-        console.log(res.user);
-      })
+      .then((res) => {})
       .catch((error) => {
         console.log(error);
       });
@@ -91,6 +101,7 @@ const Register = () => {
                     Email Address
                   </label>
                   <input
+                  required
                     type="email"
                     name="email"
                     id="email"
@@ -135,7 +146,7 @@ const Register = () => {
                 <div className="">
                   <div className="flex justify-between mb-2">
                     <label
-                      htmlFor="password"
+                      htmlFor="cpassword"
                       className="text-sm text-gray-600 dark:text-gray-200"
                     >
                       Confirm Password

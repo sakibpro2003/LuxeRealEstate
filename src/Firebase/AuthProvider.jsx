@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState, useTransition } from 'react';
 import {onAuthStateChanged , getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import app from './firebase.init';
+import toast, { Toaster } from 'react-hot-toast';
 export const AuthContext = createContext(null);
 
 const auth  = getAuth(app);
@@ -12,6 +13,7 @@ const AuthProvider = ({children}) => {
     const provider = new GoogleAuthProvider();
     const [name,setName] = useState("");
     const [photo,setPhoto] = useState("");
+
 
 
 
@@ -45,8 +47,9 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, (currentUser) =>{
             setUser(currentUser);
-            const profilename=(currentUser)
+            const profilename=(currentUser.displayName)
             setName(profilename);
+            console.log(profilename)
             const profilePhoto=currentUser.photoURL;
             setPhoto(profilePhoto)
 
@@ -57,7 +60,7 @@ const AuthProvider = ({children}) => {
         return ()=>{
             unsubscribe();
         }
-    },[])
+    },[user,photo])
 
 
     const authInfo = {
@@ -69,12 +72,14 @@ const AuthProvider = ({children}) => {
         googleLogin,
         name,
         photo,
+        // notify,
         // setUser,
     }
     return (
         <div>
             <AuthContext.Provider value={authInfo}>
                 {children}
+                
             </AuthContext.Provider>
         </div>
     );
