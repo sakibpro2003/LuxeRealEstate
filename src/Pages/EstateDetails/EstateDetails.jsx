@@ -1,16 +1,35 @@
-import { useParams } from 'react-router-dom';
-import { useLoaderData } from 'react-router-dom';
-// import {datas} from "../../../public/data.json"
-import DataFetch from ""
+import { useParams } from "react-router-dom";
+import DataFetch from "../../DataFetch";
+import { useEffect, useState } from "react";
 
 const EstateDetails = () => {
-  const datas = useLoaderData();
-  console.log("data",datas);
-  const {id} = useParams();
-  const intId = parseInt(id);
-  console.log(typeof(id),id);
-  // const singleData = datas.find((singleData) => singleData.id == intId )
-    console.log("ok");
+  const [singleData, setSingleData] = useState({});
+  // const []
+  const { id } = useParams();
+
+  const { data, loading } = DataFetch();
+  useEffect(() => {
+    if (data) {
+      // console.log(data);
+      console.log("card idtype", typeof id);
+      const oneData = data.find((item) => item.id == id);
+      setSingleData(oneData);
+      console.log(oneData);
+    }
+  }, [data, id]);
+
+  const {
+    image,
+    estate_title,
+    segment_name,
+    description,
+    price,
+    status,
+    area,
+    location,
+  } = singleData || {};
+  console.log(estate_title);
+
   return (
     <div>
       <div className="container mt-32 mx-auto p-4 md:p-0">
@@ -38,7 +57,11 @@ const EstateDetails = () => {
                 </div>
                 <div className="w-full lg:w-3/5 lg:px-3">
                   <p className="text-md mt-4 lg:mt-0 text-justify md:text-left text-sm">
-                   dfsd af asf fa dfsdaf sdf sdaf sdfasd fsda fsd fsd fsdafsdf saf sfs sgd sdsgdgdgfdgdfhg gkjfklsjf klsdjf klsdjfksdjf klsj fklsdjflksdj flksdj fklsj fklsdj lkf jsoifh duighuioaf hsdifh sdj fisd jflksdj lkfjslkfjslakd jflkasj fa;lskj flk;sad jflksad jflksdjflksj dlkj slkfjalkj
+                    dfsd af asf fa dfsdaf sdf sdaf sdfasd fsda fsd fsd fsdafsdf
+                    saf sfs sgd sdsgdgdgfdgdfhg gkjfklsjf klsdjf klsdjfksdjf
+                    klsj fklsdjflksdj flksdj fklsj fklsdj lkf jsoifh duighuioaf
+                    hsdifh sdj fisd jflksdj lkfjslkfjslakd jflkasj fa;lskj
+                    flk;sad jflksad jflksdjflksj dlkj slkfjalkj
                   </p>
                 </div>
                 <div className="w-full lg:w-1/5 mt-6 lg:mt-0 lg:px-4 text-center md:text-left">
