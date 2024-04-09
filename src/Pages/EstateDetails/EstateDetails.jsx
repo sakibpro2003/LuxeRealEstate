@@ -1,8 +1,16 @@
 import { useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+// import {datas} from "../../../public/data.json"
+import DataFetch from ""
 
 const EstateDetails = () => {
-    const {id} = useParams();
-    console.log(id);
+  const datas = useLoaderData();
+  console.log("data",datas);
+  const {id} = useParams();
+  const intId = parseInt(id);
+  console.log(typeof(id),id);
+  // const singleData = datas.find((singleData) => singleData.id == intId )
+    console.log("ok");
   return (
     <div>
       <div className="container mt-32 mx-auto p-4 md:p-0">
@@ -22,9 +30,9 @@ const EstateDetails = () => {
             <div className="h-full mx-auto px-6 md:px-0 md:pt-6 md:-ml-6 relative">
               <div className="bg-white lg:h-full p-6 -mt-6 md:mt-0 relative mb-4 md:mb-0 flex flex-wrap md:flex-wrap items-center">
                 <div className="w-full lg:w-1/5 lg:border-right lg:border-solid text-center md:text-left">
-                  <h3>{estate_title}</h3>
+                  <h3>afjskjsfd</h3>
                   <p className="mb-0 mt-3 text-grey-dark text-sm italic">
-                    {estate_title}
+                    ashdfdshf
                   </p>
                   <hr className="w-1/4 md:ml-0 mt-4  border lg:hidden" />
                 </div>
