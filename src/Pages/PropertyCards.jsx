@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { TbStatusChange } from "react-icons/tb";
+import { AiOutlineDollar } from "react-icons/ai";
 const PropertyCards = ({ properties }) => {
   const {
     estate_title,
@@ -21,7 +23,7 @@ const PropertyCards = ({ properties }) => {
       </div>
       <div className="p-6">
         <div className="flex items-center justify-between mb-3">
-          <h5 className="block font-sans text-xl antialiased font-medium leading-snug tracking-normal text-blue-gray-900">
+          <h5 className="block font-sans text-2xl antialiased font-bold leading-snug tracking-normal text-blue-gray-900">
             {estate_title}
           </h5>
           <p className="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -41,11 +43,15 @@ const PropertyCards = ({ properties }) => {
           </p>
         </div>
         <p><span className="font-bold">Location:</span>{location} </p>
-        <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-700">
+        {/* <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-700">
           {description}
-        </p>
-        <div className="inline-flex flex-wrap items-center gap-3 mt-8 group"></div>
+        </p> */}
+        <div className="inline-flex flex-wrap items-center gap-4 mt-8 group font-bold">
+        <div className="flex items-center gap-2"><TbStatusChange/> <p>{status}</p></div>
+        <div className="flex items-center gap-2"><p className="">{price}</p></div>
+        </div>
       </div>
+      
       <div className="p-6 pt-3">
         <NavLink
           to={`/details/${id}`}

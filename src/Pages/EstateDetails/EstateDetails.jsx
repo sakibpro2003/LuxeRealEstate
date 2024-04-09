@@ -1,6 +1,9 @@
 import { useParams } from "react-router-dom";
 import DataFetch from "../../DataFetch";
 import { useEffect, useState } from "react";
+import { AiOutlineHome } from "react-icons/ai";
+import { TbHomeStats } from "react-icons/tb";
+import { RiCompasses2Fill } from "react-icons/ri";
 
 const EstateDetails = () => {
   const [singleData, setSingleData] = useState({});
@@ -27,54 +30,38 @@ const EstateDetails = () => {
     status,
     area,
     location,
+    facilities
   } = singleData || {};
   console.log(estate_title);
+  // const {djdj} = facilities;
+  // console.log(facilities['0'],facilities[1],facilities[2],facilities[3]);
 
   return (
-    <div>
-      <div className="container mt-32 mx-auto p-4 md:p-0">
-        <div className="shadow-lg flex flex-wrap w-full lg:w-4/5 mx-auto">
-          <div
-            className="bg-cover bg-bottom border w-full md:w-1/3 h-64 md:h-auto relative"
-            style={{
-              backgroundImage:
-                "url('https://images7.alphacoders.com/347/347549.jpg')",
-            }}
-          >
-            <div className="absolute text-xl">
-              <i className="fa fa-heart text-white hover:text-red-light ml-4 mt-4 cursor-pointer"></i>
-            </div>
-          </div>
-          <div className="bg-white w-full md:w-2/3">
-            <div className="h-full mx-auto px-6 md:px-0 md:pt-6 md:-ml-6 relative">
-              <div className="bg-white lg:h-full p-6 -mt-6 md:mt-0 relative mb-4 md:mb-0 flex flex-wrap md:flex-wrap items-center">
-                <div className="w-full lg:w-1/5 lg:border-right lg:border-solid text-center md:text-left">
-                  <h3>afjskjsfd</h3>
-                  <p className="mb-0 mt-3 text-grey-dark text-sm italic">
-                    ashdfdshf
-                  </p>
-                  <hr className="w-1/4 md:ml-0 mt-4  border lg:hidden" />
-                </div>
-                <div className="w-full lg:w-3/5 lg:px-3">
-                  <p className="text-md mt-4 lg:mt-0 text-justify md:text-left text-sm">
-                    dfsd af asf fa dfsdaf sdf sdaf sdfasd fsda fsd fsd fsdafsdf
-                    saf sfs sgd sdsgdgdgfdgdfhg gkjfklsjf klsdjf klsdjfksdjf
-                    klsj fklsdjflksdj flksdj fklsj fklsdj lkf jsoifh duighuioaf
-                    hsdifh sdj fisd jflksdj lkfjslkfjslakd jflkasj fa;lskj
-                    flk;sad jflksad jflksdjflksj dlkj slkfjalkj
-                  </p>
-                </div>
-                <div className="w-full lg:w-1/5 mt-6 lg:mt-0 lg:px-4 text-center md:text-left">
-                  <button className="bg-white hover:bg-grey-darker hover:text-white border border-solid border-grey w-1/3 lg:w-full py-2">
-                    Visit now
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="card lg:card-side bg-base-100 shadow-xl">
+  <figure><img src={image} alt="Album"/></figure>
+  <div className="card-body">
+    <h1 className="card-title">{estate_title}</h1>
+    <h2> <span className="font-bold">Location:</span> {location} </h2>
+    <p> <span className="font-bold">Description:</span>{description} </p>
+    <div className="flex justify-center gap-6">
+      <div className="flex gap-2 items-center">
+      <AiOutlineHome className="text-xl"/> {segment_name}
+      </div>
+      <div className="flex gap-2 items-center">
+      <RiCompasses2Fill className="text-xl"/> {area}
+      </div>
+      <div className="flex gap-2 items-center">
+      <TbHomeStats className="text-xl"/> {status}
+      </div>
+      <div className="flex gap-2 items-center">
+      {price}
       </div>
     </div>
+    <div className="card-actions justify-end">
+      <button className="btn btn-primary">Listen</button>
+    </div>
+  </div>
+</div>
   );
 };
 
