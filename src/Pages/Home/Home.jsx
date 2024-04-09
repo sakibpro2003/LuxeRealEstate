@@ -5,13 +5,13 @@ import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
   const properties = useLoaderData();
-  console.log(properties.length)
-//   console.log(data.length);
   return (
     <div>
       <Navbar></Navbar>
       <Slider></Slider>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+      <h1 className="text-5xl text-center mt-16 mb-6">Visit Our Luxurious Places</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
       {
         
         properties.map(property =><PropertyCards key={property.id} properties={property}></PropertyCards>)
