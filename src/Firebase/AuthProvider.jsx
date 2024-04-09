@@ -49,11 +49,11 @@ const AuthProvider = ({children}) => {
             setUser(currentUser);
             const profilename=(currentUser.displayName)
             setName(profilename);
-            console.log(profilename)
+            // console.log(profilename)
             const profilePhoto=currentUser.photoURL;
             setPhoto(profilePhoto)
 
-            console.log(photo)
+            // console.log(photo)
 
             setLoading(false);
         });
