@@ -1,8 +1,10 @@
+
+
 [
     {
       "id": "001",
       "customerName": "Emily Johnson",
-      "customerPhoto": "[Link to Photo]",
+      "customerPhoto": "https://i.ibb.co/0CX5g8B/business-portrait-woman-photographer-zurich-professional-headshot-amelie-clements-corporate-photosho.jpg",
       "rating": "5/5",
       "customerUsername": "emilyluxlover",
       "occupation": "CEO",
@@ -13,8 +15,7 @@
     {
       "id": "002",
       "customerName": "Alexander Sinclair",
-      "customerPhoto": "[Link to Photo]",
-      "rating": "4.5/5",
+      "customerPhoto": "https://i.ibb.co/GWL1ws9/Elegant-Waterfront-Mansion.jpg",
       "customerUsername": "alexsinclair1",
       "occupation": "Investment Banker",
       "join_date": "2018-11-20",
@@ -23,11 +24,11 @@
     },
     {
       "id": "003",
-      "customerName": "Isabella Gomez",
-      "customerPhoto": "[Link to Photo]",
+      "customerName": "Sakib Prodhan",
+      "customerPhoto": "https://lh3.googleusercontent.com/a/ACg8ocKsNt1Xbj6NCN-7sTvgxMVJ_JW-iAfLJFBfhLtL3wNXiiBxozeZ=s96-c",
       "rating": "4/5",
       "customerUsername": "bellaglux",
-      "occupation": "Fashion Designer",
+      "occupation": "Software Engineer",
       "join_date": "2019-09-10",
       "bought": "Hillside Retreat",
       "detail_text": "My recent purchase of a hillside retreat thrle of city life and reconnect with nature. Thank you for helping me find my own piece of paradise."
@@ -35,7 +36,8 @@
     {
       "id": "004",
       "customerName": "William Thompson",
-      "customerPhoto": "[Link to Photo]",
+      "customerPhoto":
+       "https://i.ibb.co/0CX5g8B/business-portrait-woman-photographer-zurich-professional-headshot-amelie-clements-corporate-photosho.jpg",
       "rating": "4.8/5",
       "customerUsername": "willthomp91",
       "occupation": "Tech Entrepreneur",
@@ -46,7 +48,7 @@
     {
       "id": "005",
       "customerName": "Sophia Chen",
-      "customerPhoto": "[Link to Photo]",
+      "customerPhoto": "https://i.ibb.co/0CX5g8B/business-portrait-woman-photographer-zurich-professional-headshot-amelie-clements-corporate-photosho.jpg",
       "rating": "4.7/5",
       "customerUsername": "sophiachic",
       "occupation": "Celebrity Chef",
@@ -57,7 +59,7 @@
     {
       "id": "006",
       "customerName": "Jameson Ford",
-      "customerPhoto": "[Link to Photo]",
+      "customerPhoto": "https://i.ibb.co/SNyZjtb/man-7796384-640.jpg",
       "rating": "5/5",
       "customerUsername": "jfordlux",
       "occupation": "Actor",
@@ -68,7 +70,7 @@
     {
       "id": "007",
       "customerName": "Victoria Roberts",
-      "customerPhoto": "[Link to Photo]",
+      "customerPhoto": "https://i.ibb.co/jzhBXHv/business-headshot-Pittsburgh-1-pp-w480-h720.jpg",
       "rating": "4.9/5",
       "customerUsername": "vrobertsaffluence",
       "occupation": "CEO",
@@ -79,7 +81,7 @@
     {
       "id": "008",
       "customerName": "Benjamin Harrison",
-      "customerPhoto": "[Link to Photo]",
+      "customerPhoto": "https://i.ibb.co/YNfk2v1/female-professional-portrait-gray-backdrop.jpg",
       "rating": "4.6/5",
       "customerUsername": "benharri",
       "occupation": "Business Executive",
@@ -90,7 +92,7 @@
     {
       "id": "009",
       "customerName": "Olivia Smith",
-      "customerPhoto": "[Link to Photo]",
+      "customerPhoto": "https://i.ibb.co/SRmy7Lt/female-professional-corporate-headshots.webp",
       "rating": "4.5/5",
       "customerUsername": "oliviasmithlux",
       "occupation": "Fashion Model",
