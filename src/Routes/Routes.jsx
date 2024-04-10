@@ -4,8 +4,9 @@ import Home from "../Pages/Home/Home";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import EstateDetails from "../Pages/EstateDetails/EstateDetails";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
+// import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import Customer from "../Customer";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         {
             path:"/update",
             element:<UpdateProfile></UpdateProfile>
+        },
+        {
+            path:"/customer",
+            element:<Customer></Customer>
         },
         
     ]

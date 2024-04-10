@@ -6,7 +6,6 @@ const Home = () => {
   const properties = useLoaderData();
   return (
     <div>
-      {/* <Navbar></Navbar> */}
       <Slider></Slider>
       <h1 className="text-5xl text-center mt-16 mb-6">Visit Our Luxurious Places</h1>
 

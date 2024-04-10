@@ -1,0 +1,66 @@
+[
+    {
+      "ID": "001",
+      "Customer Name": "Emily Johnson",
+      "Customer Photo": "[Link to Photo]",
+      "Rating": "5/5",
+      "Customer Username": "emilyluxlover"
+    },
+    {
+      "ID": "002",
+      "Customer Name": "Alexander Sinclair",
+      "Customer Photo": "[Link to Photo]",
+      "Rating": "4.5/5",
+      "Customer Username": "alexsinclair1"
+    },
+    {
+      "ID": "003",
+      "Customer Name": "Isabella Gomez",
+      "Customer Photo": "[Link to Photo]",
+      "Rating": "4/5",
+      "Customer Username": "bellaglux"
+    },
+    {
+      "ID": "004",
+      "Customer Name": "William Thompson",
+      "Customer Photo": "[Link to Photo]",
+      "Rating": "4.8/5",
+      "Customer Username": "willthomp91"
+    },
+    {
+      "ID": "005",
+      "Customer Name": "Sophia Chen",
+      "Customer Photo": "[Link to Photo]",
+      "Rating": "4.7/5",
+      "Customer Username": "sophiachic"
+    },
+    {
+      "ID": "006",
+      "Customer Name": "Jameson Ford",
+      "Customer Photo": "[Link to Photo]",
+      "Rating": "5/5",
+      "Customer Username": "jfordlux"
+    },
+    {
+      "ID": "007",
+      "Customer Name": "Victoria Roberts",
+      "Customer Photo": "[Link to Photo]",
+      "Rating": "4.9/5",
+      "Customer Username": "vrobertsaffluence"
+    },
+    {
+      "ID": "008",
+      "Customer Name": "Benjamin Harrison",
+      "Customer Photo": "[Link to Photo]",
+      "Rating": "4.6/5",
+      "Customer Username": "benharri"
+    },
+    {
+      "ID": "009",
+      "Customer Name": "Olivia Smith",
+      "Customer Photo": "[Link to Photo]",
+      "Rating": "4.5/5",
+      "Customer Username": "oliviasmithlux"
+    }
+  ]
+  

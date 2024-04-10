@@ -57,6 +57,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/register">Register</NavLink>
           </li>
+          <li>
+            <NavLink to="/customer">Happy Customer</NavLink>
+          </li>
           {user ? (
             <p className="text-transparent">h</p>
           ) : (
