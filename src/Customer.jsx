@@ -35,8 +35,8 @@ function CustomerList() {
     <ul className="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-gray-700 hover:shadow">
       
       <li className="flex items-center py-3 text-sm">
-        <span>Joined On</span>
-        <span className="ml-auto">{customer.join_date}</span>
+        <span>Rating</span>
+        <span className="ml-auto">{customer.rating}</span>
       </li>
     </ul>
   </div>
