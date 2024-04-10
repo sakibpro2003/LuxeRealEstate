@@ -24,7 +24,7 @@
     "segment_name": "Villa",
     "description": "Escape to your own private paradise with this luxurious beachfront villa, offering breathtaking ocean views and world-class amenities.Escape to your own private paradise with this luxurious beachfront villa, offering breathtaking ocean views and world-class amenities.Escape to your own private paradise with this luxurious beachfront villa, offering breathtaking ocean views and world-class amenities.",
     "price": "$8,500,000",
-    "status": "sale",
+    "status": "rent",
     "area": "6000 sqft",
     "location": "Tropical Resort",
     "facilities": [
@@ -42,7 +42,7 @@
     "segment_name": "Island",
     "description": "Indulge in the ultimate luxury lifestyle on your own private island, complete with luxurious accommodations and unparalleled privacy.Indulge in the ultimate luxury lifestyle on your own private island, complete with luxurious accommodations and unparalleled privacy.Indulge in the ultimate luxury lifestyle on your own private island, complete with luxurious accommodations and unparalleled privacy.",
     "price": "$15,000,000",
-    "status": "sale",
+    "status": "rent",
     "area": "10 acres",
     "location": " Island Oasis",
     "facilities": [
@@ -96,7 +96,7 @@
     "segment_name": "Hilltop",
     "description": "Escape to this secluded hilltop retreat offering unparalleled privacy, stunning views, and luxurious accommodations.Indulge in ultimate relaxation at this luxury resort and spa, offering world-class amenities and breathtaking views.Escape to this secluded hilltop retreat offering unparalleled privacy, stunning views, and luxurious accommodations.",
     "price": "$9,500,000",
-    "status": "sale",
+    "status": "rent",
     "area": "8000 sqft",
     "location": "Mountain Range",
     "facilities": [
@@ -150,7 +150,7 @@
     "segment_name": "Mountain",
     "description": "Escape to the mountains in this luxurious chalet retreat, offering rustic charm, modern amenities, and breathtaking alpine views.Live in contemporary elegance in this modern luxury villa boasting sleek design, state-of-the-art amenities, and panoramic views.Escape to the mountains in this luxurious chalet retreat, offering rustic charm, modern amenities, and breathtaking alpine views.",
     "price": "$7,600,000",
-    "status": "sale",
+    "status": "rent",
     "area": "6000 sqft",
     "location": "Alpine Wonderland",
     "facilities": [

@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { TbStatusChange } from "react-icons/tb";
-import { AiOutlineDollar } from "react-icons/ai";
+import { TbHomeStats } from "react-icons/tb";
 const PropertyCards = ({ properties }) => {
   const {
     estate_title,
@@ -47,7 +46,7 @@ const PropertyCards = ({ properties }) => {
           {description}
         </p> */}
         <div className="inline-flex flex-wrap items-center gap-4 mt-8 group font-bold">
-        <div className="flex items-center gap-2"><TbStatusChange/> <p>{status}</p></div>
+        <div className="flex items-center gap-2"><TbHomeStats/> <p>{status}</p></div>
         <div className="flex items-center gap-2"><p className="">{price}</p></div>
         </div>
       </div>

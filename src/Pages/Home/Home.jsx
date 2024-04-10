@@ -1,4 +1,3 @@
-import Navbar from "../../Shared/Navbar";
 import Slider from "../../Shared/Slider";
 import PropertyCards from "../PropertyCards";
 import { useLoaderData } from "react-router-dom";
@@ -7,7 +6,7 @@ const Home = () => {
   const properties = useLoaderData();
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <Slider></Slider>
       <h1 className="text-5xl text-center mt-16 mb-6">Visit Our Luxurious Places</h1>
 

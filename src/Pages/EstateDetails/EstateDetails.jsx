@@ -37,13 +37,15 @@ const EstateDetails = () => {
   // console.log(facilities['0'],facilities[1],facilities[2],facilities[3]);
 
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl">
+    <div className="mt-12">
+      <h1 className="text-center text-5xl mb-6">Estate Details</h1>
+      <div className="card lg:card-side bg-base-100 shadow-2xl">
   <figure><img src={image} alt="Album"/></figure>
   <div className="card-body">
     <h1 className="card-title">{estate_title}</h1>
     <h2> <span className="font-bold">Location:</span> {location} </h2>
     <p> <span className="font-bold">Description:</span>{description} </p>
-    <div className="flex justify-center gap-6">
+    <div className="flex justify-center gap-4">
       <div className="flex gap-2 items-center">
       <AiOutlineHome className="text-xl"/> {segment_name}
       </div>
@@ -62,6 +64,7 @@ const EstateDetails = () => {
     </div>
   </div>
 </div>
+    </div>
   );
 };
 

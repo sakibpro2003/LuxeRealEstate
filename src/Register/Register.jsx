@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import Navbar from "../Shared/Navbar";
 import { AuthContext } from "../Firebase/AuthProvider";
 const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -35,7 +34,7 @@ const Register = () => {
   };
   return (
     <div className="bg-white dark:bg-gray-900">
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
 
       <div className="flex justify-center h-screen">
         <div
