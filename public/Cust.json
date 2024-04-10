@@ -1,66 +1,102 @@
 [
     {
-      "ID": "001",
-      "Customer Name": "Emily Johnson",
-      "Customer Photo": "[Link to Photo]",
-      "Rating": "5/5",
-      "Customer Username": "emilyluxlover"
+      "id": "001",
+      "customerName": "Emily Johnson",
+      "customerPhoto": "[Link to Photo]",
+      "rating": "5/5",
+      "customerUsername": "emilyluxlover",
+      "occupation": "CEO",
+      "join_date": "2020-05-15",
+      "bought": "Luxury Villa",
+      "detail_text": "I recently purchased a stunning luxury villa from your company, and I must say, it exceeded all my expectatse."
     },
     {
-      "ID": "002",
-      "Customer Name": "Alexander Sinclair",
-      "Customer Photo": "[Link to Photo]",
-      "Rating": "4.5/5",
-      "Customer Username": "alexsinclair1"
+      "id": "002",
+      "customerName": "Alexander Sinclair",
+      "customerPhoto": "[Link to Photo]",
+      "rating": "4.5/5",
+      "customerUsername": "alexsinclair1",
+      "occupation": "Investment Banker",
+      "join_date": "2018-11-20",
+      "bought": "Luxury Mansion",
+      "detail_text": "I recently acquired a luxurious mansion through your services, and I couldn't be howning a lavish estate a reality."
     },
     {
-      "ID": "003",
-      "Customer Name": "Isabella Gomez",
-      "Customer Photo": "[Link to Photo]",
-      "Rating": "4/5",
-      "Customer Username": "bellaglux"
+      "id": "003",
+      "customerName": "Isabella Gomez",
+      "customerPhoto": "[Link to Photo]",
+      "rating": "4/5",
+      "customerUsername": "bellaglux",
+      "occupation": "Fashion Designer",
+      "join_date": "2019-09-10",
+      "bought": "Hillside Retreat",
+      "detail_text": "My recent purchase of a hillside retreat thrle of city life and reconnect with nature. Thank you for helping me find my own piece of paradise."
     },
     {
-      "ID": "004",
-      "Customer Name": "William Thompson",
-      "Customer Photo": "[Link to Photo]",
-      "Rating": "4.8/5",
-      "Customer Username": "willthomp91"
+      "id": "004",
+      "customerName": "William Thompson",
+      "customerPhoto": "[Link to Photo]",
+      "rating": "4.8/5",
+      "customerUsername": "willthomp91",
+      "occupation": "Tech Entrepreneur",
+      "join_date": "2021-03-05",
+      "bought": "Waterfront Estate",
+      "detail_text": "I recently purchased a breathtaking waterfront estate through your agency, and I must say, it's exceeded all m ev home."
     },
     {
-      "ID": "005",
-      "Customer Name": "Sophia Chen",
-      "Customer Photo": "[Link to Photo]",
-      "Rating": "4.7/5",
-      "Customer Username": "sophiachic"
+      "id": "005",
+      "customerName": "Sophia Chen",
+      "customerPhoto": "[Link to Photo]",
+      "rating": "4.7/5",
+      "customerUsername": "sophiachic",
+      "occupation": "Celebrity Chef",
+      "join_date": "2022-06-12",
+      "bought": "Luxury Penthouse",
+      "detail_text": "I recently purchased a stunning luxury penthouse through your agency, and I couldn't be happThe sleek modern design, the breathtaking views of the city skyliome."
     },
     {
-      "ID": "006",
-      "Customer Name": "Jameson Ford",
-      "Customer Photo": "[Link to Photo]",
-      "Rating": "5/5",
-      "Customer Username": "jfordlux"
+      "id": "006",
+      "customerName": "Jameson Ford",
+      "customerPhoto": "[Link to Photo]",
+      "rating": "5/5",
+      "customerUsername": "jfordlux",
+      "occupation": "Actor",
+      "join_date": "2023-10-28",
+      "bought": "Luxury Chalet",
+      "detail_text": "I recently purchased a luxurious chalet through your agency, and I must say, it's been anure r team. The attention to deesign, the stuparadise."
     },
     {
-      "ID": "007",
-      "Customer Name": "Victoria Roberts",
-      "Customer Photo": "[Link to Photo]",
-      "Rating": "4.9/5",
-      "Customer Username": "vrobertsaffluence"
+      "id": "007",
+      "customerName": "Victoria Roberts",
+      "customerPhoto": "[Link to Photo]",
+      "rating": "4.9/5",
+      "customerUsername": "vrobertsaffluence",
+      "occupation": "CEO",
+      "join_date": "2020-08-17",
+      "bought": "Luxury Beachfront Villa",
+      "detail_text": "I recently purchased a luxurious beachfront villa through your agency, and I must say, it's been an absolutm come truehelping me find my own piece of paradise."
     },
     {
-      "ID": "008",
-      "Customer Name": "Benjamin Harrison",
-      "Customer Photo": "[Link to Photo]",
-      "Rating": "4.6/5",
-      "Customer Username": "benharri"
+      "id": "008",
+      "customerName": "Benjamin Harrison",
+      "customerPhoto": "[Link to Photo]",
+      "rating": "4.6/5",
+      "customerUsername": "benharri",
+      "occupation": "Business Executive",
+      "join_date": "2017-12-04",
+      "bought": "Luxury Country Estate",
+      "detail_text": "I recently acquired a luxurious country estate through your agency, and I coulxpansive grouetecture, and tlping me find my dream home."
     },
     {
-      "ID": "009",
-      "Customer Name": "Olivia Smith",
-      "Customer Photo": "[Link to Photo]",
-      "Rating": "4.5/5",
-      "Customer Username": "oliviasmithlux"
+      "id": "009",
+      "customerName": "Olivia Smith",
+      "customerPhoto": "[Link to Photo]",
+      "rating": "4.5/5",
+      "customerUsername": "oliviasmithlux",
+      "occupation": "Fashion Model",
+      "join_date": "2023-04-30",
+      "bought": "Luxury Condo",
+      "detail_text": "My recent purchase of a luxurious condo throughct urban oasis. Thank you for helpiy dream home."
     }
   ]
   
