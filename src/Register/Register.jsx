@@ -27,12 +27,11 @@ const Register = () => {
       </Helmet>
 
       <div>
-      <h3>register</h3>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-base-200 rounded-2xl p-10" style={{ backgroundImage: "url('https://i.ibb.co/QDJDysG/view-light-lamp-with-futuristic-design-23-2151037593.jpg')" }}>
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
+            <h1 className="text-5xl text-white font-bold">Register now!</h1>
+            <p className="py-6 text-white">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
@@ -50,7 +49,7 @@ const Register = () => {
                   className="input input-bordered"
                   {...register("fullName", { required: true })}
                 />
-                {errors.fullName && <span className="bg-red-500">This field is required</span>}
+                {errors.fullName && <span className="text-red-500">This field is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -63,11 +62,11 @@ const Register = () => {
                   {...register("email", { required: true })}
                   
                 />
-                {errors.email && <span className="bg-red-500">This field is required</span>}
+                {errors.email && <span className="text-red-500">This field is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">pass</span>
+                  <span className="label-text">Password</span>
                 </label>
                 <input
                   type="password"
@@ -76,11 +75,11 @@ const Register = () => {
                   {...register("password", { required: true })}
                   
                 />
-                {errors.password && <span className="bg-red-500">This field is required</span>}
+                {errors.password && <span className="text-red-500">This field is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">image</span>
+                  <span className="label-text">Profile Photo URL</span>
                 </label>
                 <input
                   type="text"
@@ -91,8 +90,8 @@ const Register = () => {
                 />
                 {errors.image && <span>This field is required</span>}
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
+                  <a href="/login" className="label-text-alt link link-hover">
+                    Already Registered? Login
                   </a>
                 </label>
               </div>

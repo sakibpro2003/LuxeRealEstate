@@ -3,27 +3,23 @@ import Navbar from "../Shared/Navbar";
 import { AuthContext } from "../Firebase/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form"
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { Navigate } from "react-router-dom";
 
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
+  const [passwordVisible,setPasswordVisible] =useState(null);
+  const togglePasswordVisibility = () => {
+    setPasswordVisible((prevVisible) => !prevVisible);
+  };
   const handleGoogleLogin = async () => {
     googleLogin().then((result) => {
       // console.log("googlelogin",result.user)
     });
     
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   const email = e.target.email.value;
-  //   const password = e.target.password.value;
-  //   loginUser(email, password)
-  //     .then((res) => {
-  //       // setUserLogged(res.user);
-  //       // console.log(res.user);
-  //     })
-  //     .catch((error) => {
-  //       alert(error.message)
-  //     });
+    
+ 
   };
   const {
     register,
@@ -34,6 +30,7 @@ const Login = () => {
     loginUser(data.email,data.password)
     .then((result) => {
         console.log(result)
+        
       })
 };
   return (
@@ -45,11 +42,11 @@ const Login = () => {
       </Helmet>
       <div>
       {/* <h3>Login</h3> */}
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-base-200 rounded-2xl"  style={{ backgroundImage: "url('https://i.ibb.co/QDJDysG/view-light-lamp-with-futuristic-design-23-2151037593.jpg')" }}>
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
+            <h1 className="text-5xl text-white font-bold">Login now!</h1>
+            <p className="py-6 text-white">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
@@ -69,33 +66,46 @@ const Login = () => {
                   {...register("email", { required: true })}
                   
                 />
-                {errors.email && <span className="bg-red-500">This field is required</span>}
+                {errors.email && <span className="text-red-500">This field is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">pass</span>
+                  <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={passwordVisible ? 'text' : 'password'}
                   placeholder="pass"
                   className="input input-bordered"
                   {...register("password", { required: true })}
                   
                 />
-                {errors.password && <span className="bg-red-500">This field is required</span>}
+                {errors.password && <span className="text-red-500">This field is required</span>}
               </div>
               <div className="form-control">
                
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
+                  <a href="/register" className="label-text-alt link link-hover">
+                    Not Registered yet? Register
                   </a>
                 </label>
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+              <button
+                    type="button"
+                    className="absolute inset-y-0 right-6 px-4 py-0"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+
             </form>
+            
+            <div className="flex ">
+            <button onClick={handleGoogleLogin} className="flex-grow btn btn-outline btn-success">Google Login</button>
+            <button className="btn btn-outline btn-warning flex-grow">github</button>
+            </div>
           </div>
         </div>
       </div>
