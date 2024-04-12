@@ -4,37 +4,8 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form"
 const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
-  // const [emailError,setEmailError] = useState("");
-  const { createUser } = useContext(AuthContext);
-  // const pic = "https://i.ibb.co/C2nhDnK/man-7796384-640.jpg";
-  // const handleRegister = (e) => {
-  //   e.preventDefault();
-  //   const password = e.target.password.value;
-  //   const confirm_password = e.target.confirm_password.value;
-  //   const email = e.target.email.value;
-  //   const name = e.target.name.value;
-  //   // const photo = e.target.photo.value;
-  //   const photo = pic;
-    
-  //   console.log(email, name, photo, password, confirm_password);
-    // if (password.length < 6) {
-    //   setErrorMessage("Password must be at least 6 characters");
-    //   alert(errorMessage);
-    //   return ;
-    // }
-    // else if (password !== confirm_password) {
-    //   setErrorMessage("password didnt match");
-    //   alert(errorMessage);
-    //   return ;
-    // }
-
-    // createUser(email, password)
-    //   .then((res) => {})
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-    // const { createUser } = useContext(AuthContext);
-//   console.log(creatUser);
+  const { createUser,logOut } = useContext(AuthContext);
+  
   const {
     register,
     handleSubmit,
@@ -43,6 +14,7 @@ const Register = () => {
   const onSubmit = (data) => {
     createUser(data.email,data.password)
     .then((result) => {
+      logOut()
         console.log(result)
       })
   };
