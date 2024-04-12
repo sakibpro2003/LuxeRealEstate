@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 function CustomerList() {
   const [customers, setCustomers] = useState([]);
@@ -22,11 +23,16 @@ function CustomerList() {
 
   return (
     <div className='mt-12'>
-      <h2 className='text-center text-6xl font-bold mb-8'>Customer List</h2>
-      <ul className='grid grid-cols-3'>
+      <Helmet>
+        <title>
+          Happy Customer
+        </title>
+      </Helmet>
+      <h2 className='text-center text-4xl font-bold mb-8'>Customer List</h2>
+      <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {customers.map(customer => (
           <li key={customer.id}>
-            <div className="m-10 max-w-sm">
+            <div className="m-10">
   <div className="rounded-lg border bg-white px-4 pt-8 pb-10 shadow-2xl">
     
     <h1 className="my-1 text-center text-xl font-bold leading-8 text-gray-900">{customer.customerName}</h1>

@@ -7,11 +7,15 @@ import EstateDetails from "../Pages/EstateDetails/EstateDetails";
 // import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import Customer from "../Customer";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ErrorPage from "../ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
+
     children:[
         {
             path:"/",
@@ -28,7 +32,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/details/:id",
-            element:<EstateDetails/>
+            element:<PrivateRoute><EstateDetails/></PrivateRoute>
         },
         {
             path:"/update",
@@ -36,7 +40,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/customer",
-            element:<Customer></Customer>
+            element:<PrivateRoute><Customer></Customer></PrivateRoute>
         },
         
     ]

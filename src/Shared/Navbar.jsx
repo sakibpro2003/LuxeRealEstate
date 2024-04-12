@@ -31,20 +31,20 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
+           
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
 
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            {/* <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/listed_books">Listed Books</NavLink></li>
-        <li><NavLink to="/pages_to_read">Pages to Read</NavLink></li> */}
-          </ul>
+          <li>
+            <NavLink to="/register">Register</NavLink>
+          </li>
+          <li>
+            <NavLink to="/customer">Happy Customer</NavLink>
+          </li>
+          
+          
+        </ul>
         </div>
         <a to="/" className="btn btn-ghost text-xl">LuxeRealEstate</a>
       </div>

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import Navbar from "../Shared/Navbar";
 import { AuthContext } from "../Firebase/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
@@ -24,7 +25,11 @@ const Login = () => {
   };
   return (
     <div>
-      <Navbar></Navbar>
+      <Helmet>
+        <title>
+          Login
+        </title>
+      </Helmet>
       <div className="bg-white dark:bg-gray-900">
         <div className="flex justify-center h-screen">
           <div

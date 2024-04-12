@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Slider from "../../Shared/Slider";
 import PropertyCards from "../PropertyCards";
 import { useLoaderData } from "react-router-dom";
@@ -6,6 +7,11 @@ const Home = () => {
   const properties = useLoaderData();
   return (
     <div>
+      <Helmet>
+        <title>
+          Home
+        </title>
+      </Helmet>
       {/* <Navbar></Navbar> */}
       <Slider></Slider>
       <h1 className="text-5xl text-center mt-16 mb-6">Visit Our Luxurious Places</h1>
