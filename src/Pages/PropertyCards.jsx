@@ -15,10 +15,10 @@ const PropertyCards = ({ properties }) => {
   } = properties;
   // <NavLink to={`/details/${id}`} className="btn btn-primary">Buy Now</NavLink>
   return (
-    <div className="relative flex w-full  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-2xl">
-      <div className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
+    <div className="relative flex w-full flex-grow  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-2xl">
+      <div className="relative  mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
         <img src={image} />
-        <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
+        <div className="absolute flex-grow  inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
       </div>
       <div className="p-6">
         <div className="flex items-center justify-between mb-3">
@@ -45,9 +45,9 @@ const PropertyCards = ({ properties }) => {
         {/* <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-700">
           {description}
         </p> */}
-        <div className="inline-flex flex-wrap items-center gap-4 mt-8 group font-bold">
-        <div className="flex items-center gap-2"><TbHomeStats/> <p>{status}</p></div>
-        <div className="flex items-center gap-2"><p className="">{price}</p></div>
+        <div className="flex   flex-grow items-center  mt-8 group font-bold">
+        <div className="flex items-center flex-grow  gap-2"><TbHomeStats/> <p>{status}</p></div>
+        <div className="flex items-center text-xl gap-2 text-blue-500"><p className="">{price}</p></div>
         </div>
       </div>
       
@@ -57,7 +57,7 @@ const PropertyCards = ({ properties }) => {
           className="block w-full select-none rounded-lg bg-gray-900 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
-          Reserve
+          View Details
         </NavLink>
       </div>
     </div>
