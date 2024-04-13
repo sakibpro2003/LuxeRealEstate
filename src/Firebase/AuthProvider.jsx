@@ -42,12 +42,14 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const updateUser = (fullName,image) => {
+  const updateUser = (fullName, image) => {
     return updateProfile(auth.currentUser, {
       displayName: fullName,
       photoURL: image,
     });
   };
+
+ 
 
   const googleLogin = () => {
     setLoading(true);
@@ -84,6 +86,22 @@ const AuthProvider = ({ children }) => {
     };
   }, [user, photo]);
 
+  const getUserData = () => {
+    if (user !== null) {
+      // The user object has basic properties such as display name, email, etc.
+      const displayName = user.displayName;
+      const email = user.email;
+      const photoURL = user.photoURL;
+      console.log(displayName,email,photoURL)
+      // const emailVerified = user.emailVerified;
+    
+      // The user's ID, unique to the Firebase project. Do NOT use
+      // this value to authenticate with your backend server, if
+      // you have one. Use User.getToken() instead.
+      // const uid = user.uid;
+    }
+  };
+
   const authInfo = {
     createUser,
     user,
@@ -93,8 +111,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     name,
     photo,
-    updateUser
-   
+    updateUser,
+    getUserData
   };
   return (
     <div>
