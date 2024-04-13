@@ -4,10 +4,12 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form"
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
+  const navigate = useNavigate();
   const notify = () => toast("Registered successfully. Please login");
   const [errorMessage, setErrorMessage] = useState("");
-  const { createUser,logOut } = useContext(AuthContext);
+  const { createUser,logOut,updateUser } = useContext(AuthContext);
 
   
   
@@ -36,9 +38,11 @@ const Register = () => {
     }
     createUser(data.email,data.password)
     .then((result) => {
+      updateUser(data.fullName,data.image)
       logOut()
         console.log(result)
         notify();
+        navigate("/");
       })
   };
   return (

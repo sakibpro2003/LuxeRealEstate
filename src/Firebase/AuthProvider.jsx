@@ -12,6 +12,7 @@ import {
   signOut,
   signInWithPopup,
   GoogleAuthProvider,
+  updateProfile,
 } from "firebase/auth";
 import app from "./firebase.init";
 import toast, { Toaster } from "react-hot-toast";
@@ -39,6 +40,13 @@ const AuthProvider = ({ children }) => {
     notify();
 
     return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const updateUser = (fullName,image) => {
+    return updateProfile(auth.currentUser, {
+      displayName: fullName,
+      photoURL: image,
+    });
   };
 
   const googleLogin = () => {
@@ -85,8 +93,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     name,
     photo,
-    // notify,
-    // setUser,
+    updateUser
+   
   };
   return (
     <div>
