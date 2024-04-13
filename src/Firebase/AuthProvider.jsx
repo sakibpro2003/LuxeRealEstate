@@ -16,10 +16,13 @@ import {
 import app from "./firebase.init";
 import toast, { Toaster } from "react-hot-toast";
 export const AuthContext = createContext(null);
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
+  const notify = () => toast("Wow so easy!");
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(true);
   const provider = new GoogleAuthProvider();
@@ -33,6 +36,7 @@ const AuthProvider = ({ children }) => {
 
   const loginUser = (email, password) => {
     setLoading(true);
+    notify();
 
     return signInWithEmailAndPassword(auth, email, password);
   };

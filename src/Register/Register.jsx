@@ -2,9 +2,14 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form"
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 const Register = () => {
+  const notify = () => toast("Registered successfully. Please login");
   const [errorMessage, setErrorMessage] = useState("");
   const { createUser,logOut } = useContext(AuthContext);
+
+  
   
   const {
     register,
@@ -12,10 +17,28 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+  setErrorMessage("");
+
+    console.log("email sakib",data.password,data.cpassword)
+    if(data.password !== data.cpassword){
+      return setErrorMessage("Password is not matching");
+    }
+    if(data.password <6 || data.cpassword < 6){
+      return setErrorMessage("Password must be at least 6 characters");
+    }
+  if(!(/.*[A-Z].*/).test(data.password)){
+      console.log("uppercase")
+      return setErrorMessage("Use an uppercase latter");
+    }
+  if(!(/.*[a-z].*/).test(data.password)){
+      console.log("uppercase")
+      return setErrorMessage("Use a lowercase latter");
+    }
     createUser(data.email,data.password)
     .then((result) => {
       logOut()
         console.log(result)
+        notify();
       })
   };
   return (
@@ -56,6 +79,7 @@ const Register = () => {
                   <span className="label-text">Email</span>
                 </label>
                 <input
+                  name="email"
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
@@ -70,11 +94,25 @@ const Register = () => {
                 </label>
                 <input
                   type="password"
-                  placeholder="pass"
+                  placeholder="Password"
                   className="input input-bordered"
                   {...register("password", { required: true })}
                   
                 />
+                {errors.password && <span className="text-red-500">This field is required</span>}
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Confirm Password</span>
+                </label>
+                <input
+                  type="password"
+                  placeholder="Retype your password"
+                  className="input input-bordered"
+                  {...register("cpassword", { required: true })}
+                  
+                />
+                <div className="text-red-500">{errorMessage}</div>
                 {errors.password && <span className="text-red-500">This field is required</span>}
               </div>
               <div className="form-control">
@@ -96,7 +134,9 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary">Register</button>
+                <ToastContainer />
+
               </div>
             </form>
           </div>
