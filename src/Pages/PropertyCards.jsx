@@ -42,9 +42,7 @@ const PropertyCards = ({ properties }) => {
           </p>
         </div>
         <p><span className="font-bold">Location:</span>{location} </p>
-        {/* <p className="block font-sans text-base antialiased font-light leading-relaxed text-gray-700">
-          {description}
-        </p> */}
+        
         <div className="flex   flex-grow items-center  mt-8 group font-bold">
         <div className="flex items-center flex-grow  gap-2"><TbHomeStats/> <p>{status}</p></div>
         <div className="flex items-center text-xl gap-2 text-blue-500"><p className="">{price}</p></div>

@@ -47,6 +47,9 @@ const Navbar = () => {
               <li>
                 <NavLink to="/customer">Happy Customer</NavLink>
               </li>
+              <li>
+                <NavLink to="/update">Update Profile</NavLink>
+              </li>
             </ul>
           </div>
           <a to="/" className="btn btn-ghost text-xl">
