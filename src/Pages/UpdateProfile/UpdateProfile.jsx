@@ -29,9 +29,9 @@ const UpdateProfile = () => {
       <div className="">
         <div className="overflow-x-auto">
           <h2 className="text-center text-4xl">Your Current Profile Details</h2>
-          <table className="table table-zebra">
+          <table className="table table-zebra  bg-gray-600 text-white">
             {/* head */}
-            <thead>
+            <thead className="text-white text-center text-xl">
               <tr>
                 <th>Name</th>
                 <th>Email</th>
@@ -40,7 +40,7 @@ const UpdateProfile = () => {
             </thead>
             <tbody>
               {/* row 1 */}
-              <tr>
+              <tr className="font-bold">
                 <td>{user.displayName}</td>
                 <td>{user.email}</td>
                 <td>{user.photoURL}</td>
@@ -49,6 +49,7 @@ const UpdateProfile = () => {
           </table>
         </div>
       </div>
+      <h3 className="text-center font-bold text-4xl mt-10">Edit to Update</h3>
       <div className="hero">
         <div className="hero-content">
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
