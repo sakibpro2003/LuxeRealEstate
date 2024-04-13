@@ -42,7 +42,7 @@ const Register = () => {
       logOut()
         console.log(result)
         notify();
-        navigate("/");
+        // navigate("/");
       })
   };
   return (
