@@ -4,12 +4,14 @@ import { AuthContext } from "../Firebase/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
   const [passwordVisible,setPasswordVisible] =useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setPasswordVisible((prevVisible) => !prevVisible);
   };
@@ -30,6 +32,7 @@ const Login = () => {
     loginUser(data.email,data.password)
     .then((result) => {
         console.log(result)
+        navigate(location?.state ? location.state :"/")
         
       })
 };

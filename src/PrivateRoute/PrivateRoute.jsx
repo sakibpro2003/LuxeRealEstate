@@ -7,7 +7,7 @@ const PrivateRoute = ({children}) => {
     const location = useLocation();
     console.log(location.pathname)
     // if(loading){
-    //     return (<div className="mt-56 ml-56"><span className="loading loading-spinner text-error"></span></div>)
+    //     return <h1 className="text-7xl bg-red-500 ">loading</h1>
     // }
     if(user){
         return children;
