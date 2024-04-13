@@ -20,7 +20,7 @@ const Login = () => {
   };
   const handleGoogleLogin = async () => {
     googleLogin().then((result) => {
-      // console.log("googlelogin",result.user)
+      navigate(location?.state ? location.state : "/");
     });
   };
   const {

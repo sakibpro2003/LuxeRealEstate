@@ -4,9 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form"
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 const Register = () => {
-  const navigate = useNavigate();
   const notify = () => toast("Registered successfully. Please login");
   const [errorMessage, setErrorMessage] = useState("");
   const { createUser,logOut,updateUser } = useContext(AuthContext);
@@ -25,8 +23,9 @@ const Register = () => {
     if(data.password !== data.cpassword){
       return setErrorMessage("Password is not matching");
     }
-    if(data.password <6 || data.cpassword < 6){
+    if(data.password.length <6){
       return setErrorMessage("Password must be at least 6 characters");
+      
     }
   if(!(/.*[A-Z].*/).test(data.password)){
       console.log("uppercase")
@@ -42,8 +41,10 @@ const Register = () => {
       logOut()
         console.log(result)
         notify();
-        // navigate("/");
       })
+    .catch(error=>{
+      setErrorMessage(error.message);
+    })
   };
   return (
     <div className="">
@@ -73,6 +74,7 @@ const Register = () => {
                 <input
                   type="text"
                   placeholder="name"
+                  required
                   className="input input-bordered"
                   {...register("fullName", { required: true })}
                 />
@@ -85,6 +87,7 @@ const Register = () => {
                 <input
                   name="email"
                   type="email"
+                  required
                   placeholder="email"
                   className="input input-bordered"
                   {...register("email", { required: true })}

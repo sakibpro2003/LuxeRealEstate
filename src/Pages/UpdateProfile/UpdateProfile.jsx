@@ -1,44 +1,53 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
 const UpdateProfile = () => {
-  const { user, getUserData,updateUser } = useContext(AuthContext);
-  const handleUpdate = (e)=>{
+  const { user, getUserData, updateUser } = useContext(AuthContext);
+  const [updateError,setUpdateError] = useState(null);
+  const handleUpdate = (e) => {
     // e.preventDefault();
-    const email= e.target.email.value;
-    const name = e.target.fullname.value;
-    const photo = e.target.photo.value;
-    updateUser(name,photo);
-    console.log(email,name,photo)
-  }
-  console.log(user)
+    // const email = e.target.email.value;
+    const fullName = e.target.fullname.value;
+    const image = e.target.photo.value;
+    if(fullName === ""){
+      setUpdateError("name can not be empty")
+      return;
+    }
+    if(image===""){
+      setUpdateError("image URL cant be empty")
+      return ;
+    }
+    updateUser(fullName, image);
+    console.log( fullName, image);
+  };
+  console.log(user);
   getUserData();
 
   return (
     <div className="">
       <div className="">
-      <div className="overflow-x-auto">
-  <table className="table table-zebra">
-    {/* head */}
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Photo Url</th>
-      </tr>
-    </thead>
-    <tbody>
-      {/* row 1 */}
-      <tr>
-        <td>{user.displayName}</td>
-        <td>{user.email}</td>
-        <td>{user.photoURL}</td>
-      </tr>
-     
-    </tbody>
-  </table>
-</div>
+        <div className="overflow-x-auto">
+          <h2 className="text-center text-4xl">Your Current Profile Details</h2>
+          <table className="table table-zebra">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Photo Url</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* row 1 */}
+              <tr>
+                <td>{user.displayName}</td>
+                <td>{user.email}</td>
+                <td>{user.photoURL}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div className="hero">
         <div className="hero-content">
@@ -48,9 +57,13 @@ const UpdateProfile = () => {
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
-                <input type="fullName" name="fullname"  className="input input-bordered" />
+                <input
+                  type="fullName"
+                  name="fullname"
+                  className="input input-bordered"
+                />
               </div>
-              
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Photo URL</span>
@@ -58,11 +71,11 @@ const UpdateProfile = () => {
                 <input
                   type="text"
                   name="photo"
-                  
-
                   className="input input-bordered"
                 />
               </div>
+              <div className="text-red-500">{updateError}</div>
+
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Update</button>
               </div>
