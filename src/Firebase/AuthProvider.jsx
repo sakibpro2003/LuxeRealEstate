@@ -17,8 +17,7 @@ import {
 import app from "./firebase.init";
 import toast, { Toaster } from "react-hot-toast";
 export const AuthContext = createContext(null);
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { GithubAuthProvider } from "firebase/auth";
 
 const auth = getAuth(app);
 
@@ -27,6 +26,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(true);
   const provider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
   const [name, setName] = useState("");
   const [photo, setPhoto] = useState("");
 
@@ -55,6 +55,10 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, provider);
   };
+
+  const githubLogin=()=>{
+    return signInWithPopup(auth, githubProvider);
+  }
 
   const logOut = () => {
     setLoading(true);
@@ -88,17 +92,11 @@ const AuthProvider = ({ children }) => {
 
   const getUserData = () => {
     if (user !== null) {
-      // The user object has basic properties such as display name, email, etc.
       const displayName = user.displayName;
       const email = user.email;
       const photoURL = user.photoURL;
       console.log(displayName,email,photoURL)
-      // const emailVerified = user.emailVerified;
-    
-      // The user's ID, unique to the Firebase project. Do NOT use
-      // this value to authenticate with your backend server, if
-      // you have one. Use User.getToken() instead.
-      // const uid = user.uid;
+      
     }
   };
 
@@ -112,7 +110,8 @@ const AuthProvider = ({ children }) => {
     name,
     photo,
     updateUser,
-    getUserData
+    getUserData,
+    githubLogin
   };
   return (
     <div>

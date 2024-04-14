@@ -11,7 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 const Login = () => {
   const [success, setSuccess] = useState(null);
   const notify = () => toast();
-  const { loginUser, googleLogin } = useContext(AuthContext);
+  const { loginUser, googleLogin,githubLogin } = useContext(AuthContext);
   const [passwordVisible, setPasswordVisible] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,6 +23,11 @@ const Login = () => {
       navigate(location?.state ? location.state : "/");
     });
   };
+
+  const handleGithubLogin=()=>{
+    githubLogin().then(result=> console.log(result))
+    navigate(location?.state ? location.state : "/");
+  }
   const {
     register,
     handleSubmit,
@@ -128,7 +133,7 @@ const Login = () => {
                 </button>
                 {/* <ToastContainer /> */}
 
-                <button className="btn btn-outline btn-warning flex-grow">
+                <button onClick={handleGithubLogin} className="btn btn-outline btn-warning flex-grow">
                   github
                 </button>
               </div>
