@@ -1,6 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { TbHomeStats } from "react-icons/tb";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const PropertyCards = ({ properties }) => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   const {
     estate_title,
     image,
@@ -13,9 +21,8 @@ const PropertyCards = ({ properties }) => {
     location,
     facilities,
   } = properties;
-  // <NavLink to={`/details/${id}`} className="btn btn-primary">Buy Now</NavLink>
   return (
-    <div className="relative flex w-full flex-grow  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-2xl">
+    <div data-aos="fade-left" className="relative flex w-full flex-grow  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-2xl">
       <div className="relative  mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
         <img src={image} />
         <div className="absolute flex-grow  inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
