@@ -6,3 +6,8 @@ Live Link: https://lighthearted-macaron-6613c4.netlify.app
  * Intuitive User Interface
  * Mobile and Tablet and Large Device Responsive
  * Profile Update Feature
+
+<h3>Used npm Packages</h3>
+- AOS package
+- React Hook Form
+- Swiper Slider
