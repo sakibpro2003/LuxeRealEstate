@@ -26,6 +26,11 @@ const UpdateProfile = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>
+          Update Profile
+        </title>
+      </Helmet>
       <div className="">
         <div className="overflow-x-auto">
           <h2 className="text-center text-4xl">Your Current Profile Details</h2>
