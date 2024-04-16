@@ -6,7 +6,7 @@ const DataFetch = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const res = await fetch("/public/data.json");
+      const res = await fetch("/data.json");
       const data = await res.json();
       setData(data);
         // console.log("data length",data.length);

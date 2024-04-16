@@ -7,7 +7,7 @@ function CustomerList() {
   useEffect(() => {
     async function fetchCustomers() {
       try {
-        const response = await fetch('../public/Cust.json');
+        const response = await fetch('/Cust.json');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
