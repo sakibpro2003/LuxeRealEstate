@@ -4,22 +4,22 @@ import { AuthContext } from "../../Firebase/AuthProvider";
 
 const UpdateProfile = () => {
   const { user, getUserData, updateUser } = useContext(AuthContext);
-  const [updateError,setUpdateError] = useState(null);
+  const [updateError, setUpdateError] = useState(null);
   const handleUpdate = (e) => {
     // e.preventDefault();
     // const email = e.target.email.value;
     const fullName = e.target.fullname.value;
     const image = e.target.photo.value;
-    if(fullName === ""){
-      setUpdateError("name can not be empty")
+    if (fullName === "") {
+      setUpdateError("name can not be empty");
       return;
     }
-    if(image===""){
-      setUpdateError("image URL cant be empty")
-      return ;
+    if (image === "") {
+      setUpdateError("image URL cant be empty");
+      return;
     }
     updateUser(fullName, image);
-    console.log( fullName, image);
+    console.log(fullName, image);
   };
   console.log(user);
   getUserData();
@@ -27,31 +27,29 @@ const UpdateProfile = () => {
   return (
     <div className="">
       <Helmet>
-        <title>
-          Update Profile
-        </title>
+        <title>Update Profile</title>
       </Helmet>
-      <div className="">
-        <div className="overflow-x-auto">
+      <div >
+        <div className="">
           <h2 className="text-center text-4xl">Your Current Profile Details</h2>
-          <table className="table table-zebra  bg-gray-600 text-white">
-            {/* head */}
-            <thead className="text-white text-center text-xl">
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Photo Url</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row 1 */}
-              <tr className="font-bold">
-                <td>{user.displayName}</td>
-                <td>{user.email}</td>
-                <td>{user.photoURL}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="flex flex-col text-center shadow-2xl text-wrap p-6 rounded-lg mt-6">
+            <div className="">
+              <p className=" text-xl font-bold">Name</p>
+              <p>{user.displayName}</p>
+              <hr />
+            </div>
+            <div className="mt-6">
+              <p className=" text-xl font-bold">Email</p>
+              <p>{user.email}</p>
+              <hr />
+            </div>
+            <div className="mt-6">
+              <p className=" text-xl font-bold">Profile Picture URL</p>
+              <p>{user.photoURL}</p>
+              
+            </div>
+          </div>
+          
         </div>
       </div>
       <h3 className="text-center font-bold text-4xl mt-10">Edit to Update</h3>
