@@ -15,10 +15,10 @@ const EstateDetails = () => {
   useEffect(() => {
     if (data) {
       // console.log(data);
-      console.log("card idtype", typeof id);
+      // console.log("card idtype", typeof id);
       const oneData = data.find((item) => item.id == id);
       setSingleData(oneData);
-      console.log(oneData);
+      // console.log(oneData);
     }
   }, [data, id]);
 
@@ -33,13 +33,8 @@ const EstateDetails = () => {
     location,
     facilities,
   } = singleData || {};
-  console.log(estate_title);
 
-  // facilities.map(fac => console.log(fac))
 
-  // const {djdj} = facilities;
-  // const fac = facilities[0];
-  // console.log(fac);
 
   return (
     <div className="">
@@ -63,6 +58,14 @@ const EstateDetails = () => {
               <span className="font-bold">Description:</span>
               {description}{" "}
             </p>
+            <p className="font-bold">Facilities</p>
+            <div className="">
+            <li>{facilities?.length&&facilities[0]}</li>
+            <li>{facilities?.length&&facilities[1]}</li>
+            <li>{facilities?.length&&facilities[2]}</li>
+            <li>{facilities?.length&&facilities[3]}</li>
+            
+            </div>
             <div className="grid grid-cols-2 lg:flex justify-center gap-4">
               <div className="flex gap-2 items-center">
                 <AiOutlineHome className="text-xl" /> {segment_name}
